@@ -1,0 +1,16 @@
+﻿@model FileUploader.Data.Image
+
+<div class="row">
+    <div class="col-md-8 offset-md-2 jumbotron">
+        <h3>
+            Thank You for uploading your image, here's the link to share eith your friends:<br />
+
+            <a href="https://localhost:5001/Home/Viewimage?id=@Model.Id">
+                https://localhost:5001/Home/Viewimage?id=@Model.Id
+            </a><br />
+
+            make sure to give them the password of "@Model.Password"
+        </h3>
+    </div>
+</div>
+
