@@ -36,7 +36,7 @@ namespace FileUploader.Data
         {
             using var connection = new SqlConnection(_connectionString);
             using var cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT TOP 1 From Images WHERE Id = @id";
+            cmd.CommandText = "SELECT TOP 1 * From Images WHERE Id = @id";
             cmd.Parameters.AddWithValue("@id", id);
             connection.Open();
             var reader = cmd.ExecuteReader();

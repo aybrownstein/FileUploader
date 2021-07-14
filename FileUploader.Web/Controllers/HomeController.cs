@@ -10,6 +10,7 @@ using FileUploader.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace FileUploader.Web.Controllers
 {
@@ -34,8 +35,8 @@ namespace FileUploader.Web.Controllers
         [HttpPost]
         public IActionResult Upload(Image image, IFormFile imageFile)
         {
-            Guid guid = Guid.NewGuid();
-            string actualFileName = $"{guid}-{Path.GetExtension(imageFile.FileName)}";
+            
+            string actualFileName = $"{Guid.NewGuid()}{Path.GetExtension(imageFile.FileName)}";
             string finalFileName = Path.Combine(_environment.WebRootPath, "uploads", actualFileName);
             using (FileStream fs = new FileStream(finalFileName, FileMode.CreateNew)) { 
                 imageFile.CopyTo(fs);

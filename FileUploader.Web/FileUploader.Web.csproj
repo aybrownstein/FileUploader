@@ -12,4 +12,8 @@
     <ProjectReference Include="..\FileUploader.Data\FileUploader.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
 </Project>
